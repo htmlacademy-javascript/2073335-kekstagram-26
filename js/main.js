@@ -4,7 +4,7 @@ const getRandomNumber = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
+getRandomNumber()
 //Функция для проверки максимальной длины строки.
 const checkLineLength = (line, maxLength) => {
 
@@ -12,5 +12,5 @@ const checkLineLength = (line, maxLength) => {
     return true;
   }
   return false;
-
+checkLineLength()
 };
