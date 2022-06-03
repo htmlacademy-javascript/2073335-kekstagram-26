@@ -12,5 +12,6 @@ const checkLineLength = (line, maxLength) => {
     return true;
   }
   return false;
-checkLineLength()
+
 };
+checkLineLength()
