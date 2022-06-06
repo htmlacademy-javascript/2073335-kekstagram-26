@@ -8,10 +8,7 @@ getRandomNumber();
 //Функция для проверки максимальной длины строки.
 const checkLineLength = (line, maxLength) => {
 
-  if (line.length <= maxLength) {
-    return true;
-  }
-  return false;
+  return line.length <= maxLength;
 
 };
 checkLineLength();
