@@ -1,3 +1,4 @@
+
 // Функция, возвращающая случайное целое число из переданного диапазона включительно,
 const getRandomNumber = (min, max) => {
   min = Math.ceil(min);
@@ -86,5 +87,7 @@ const createPhoto = () => ({
 
 
 const photos = Array.from({length: PEOPLE_COUNT}, createPhoto);
+
+
 
 
