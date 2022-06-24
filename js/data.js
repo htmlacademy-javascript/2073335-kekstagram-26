@@ -3,7 +3,7 @@ import {getRandomNumber, createNumberPool} from './util.js';
 const numberPoolId = createNumberPool(50,1000);
 const numberPoolUrl = createNumberPool(1,25);
 const PEOPLE_COUNT = 25;
-//let idCount = 0;
+
 
 const NAMES = [
   'Мария',
@@ -45,30 +45,22 @@ const getRandomElement = (elements) => elements[getRandomNumber(0, elements.leng
 
 
 const createComment = () => ({
-  id: numberPoolId,
+  id: numberPoolId(),
   avatar: `img/avatar-${  getRandomNumber(1, 6)  }.svg`,
   message: getRandomElement(MESSAGE),
   name: getRandomElement(NAMES) }
 );
 
 
-/*const getUniqueNumber = (min) => {
-  min = min + idCount;
-  idCount = idCount + 1;
-  return min;
-};
-*/
-const createPhoto = () => ({
-
-
-  url: `photos/${  numberPoolUrl  }.jpg`,
+const createPhoto = (id) => ({
+  id,
+  url: `photos/${numberPoolUrl()}.jpg`,
   description: getRandomElement(DESCRIPTION),
   likes: getRandomNumber(15, 200),
   comments: createComment()
-}
-);
+});
 
-
-const photos = () => Array.from({length: PEOPLE_COUNT}, (_, index) => createPhoto(index + 1));
-
+const photos = () => Array.from({length: PEOPLE_COUNT}, (id, index) => createPhoto(index + 1));
 photos();
+
+
