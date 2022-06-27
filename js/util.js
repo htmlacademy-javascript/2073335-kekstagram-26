@@ -5,10 +5,6 @@ const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-//Функция для проверки максимальной длины строки.
-const checkLineLength = (line, maxLength) => line.length <= maxLength;
-checkLineLength(12, 13);
-
 
 const createNumberPool = (min, max) => {
   if (min < max) {
