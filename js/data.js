@@ -48,16 +48,17 @@ const createComment = () => ({
   id: numberPoolId(),
   avatar: `img/avatar-${  getRandomNumber(1, 6)  }.svg`,
   message: getRandomElement(MESSAGE),
-  name: getRandomElement(NAMES) }
-);
-
+  name: getRandomElement(NAMES)
+});
+//сделано, чтобы создавалось рандомное количество комментариев, и создавался массив и считался в picture-thumbnails
+const createComments = () => Array.from({length: getRandomNumber(1,10)}, () => createComment);
 
 const createPhoto = (id) => ({
   id,
   url: `photos/${numberPoolUrl()}.jpg`,
   description: getRandomElement(DESCRIPTION),
   likes: getRandomNumber(15, 200),
-  comments: createComment()
+  comments: createComments()
 });
 
 const createPhotos = () => Array.from({length: PEOPLE_COUNT}, (id, index) => createPhoto(index + 1));
