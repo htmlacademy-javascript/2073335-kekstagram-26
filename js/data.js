@@ -51,7 +51,7 @@ const createComment = () => ({
   name: getRandomElement(NAMES)
 });
 //сделано, чтобы создавалось рандомное количество комментариев, и создавался массив и считался в picture-thumbnails
-const createComments = () => Array.from({length: getRandomNumber(1,10)}, () => createComment);
+const createComments = () => Array.from({length: getRandomNumber(1,5)}, () => createComment());
 
 const createPhoto = (id) => ({
   id,
@@ -63,4 +63,4 @@ const createPhoto = (id) => ({
 
 const createPhotos = () => Array.from({length: PEOPLE_COUNT}, (id, index) => createPhoto(index + 1));
 
-export {createPhotos};
+export {createPhotos, createComments};
